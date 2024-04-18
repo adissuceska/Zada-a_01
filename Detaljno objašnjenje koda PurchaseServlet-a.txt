@@ -21,3 +21,20 @@ Metoda doPost
     Koristi PrintWriter za ispisivanje potvrde o kupovini s imenom, prezimenom i zadnjih 4 cifre broja kreditne kartice.
 Ovaj servlet omogućava korisnicima unos podataka (ime, prezime, broj kreditne kartice) i simulira proces kupovine prilikom slanja zahtjeva. 
 Metoda doGet prikazuje formu za unos, dok metoda doPost prikazuje potvrdu o kupovini.
+
+Ovaj kod predstavlja servlet u Javi koji omogućava korisnicima da unesu svoje ime, prezime, broj kreditne kartice i dugme za kupovinu.
+Kako kod funkcioniše:
+
+    doGet metoda:
+        Metoda doGet se koristi za obradu GET zahtjeva servleta.
+        Postavlja se tip sadržaja odgovora na "text/html".
+        Kreira se PrintWriter objekat za slanje odgovora.
+        Generiše se HTML oblik za formu za unos podataka (ime, prezime, broj kreditne kartice) i dugme za kupovinu.
+    doPost metoda:
+        Metoda doPost se koristi za obradu POST zahtjeva servleta.
+        Iz zahtjeva se čitaju parametri: ime, prezime i broj kreditne kartice.
+        Postavlja se tip sadržaja odgovora na "text/html".
+        Kreira se PrintWriter objekat za slanje odgovora.
+        Generiše se HTML odgovor koji potvrđuje kupovinu i prikazuje unesene podatke korisnika.
+
+Ovaj servlet omogućava korisnicima da unesu svoje podatke za kupovinu, a zatim ih prikazuje u potvrdi kupovine. Važno je napomenuti da ovaj kod ne predstavlja siguran način rukovanja sa osetljivim podacima poput brojeva kreditnih kartica, te bi trebalo dodatno unaprijediti sigurnosne mehanizme pri radu sa ovakvim informacijama.
