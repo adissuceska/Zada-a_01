@@ -19,4 +19,5 @@ Metoda doPost
     Dobavlja parametre (ime, prezime, broj kreditne kartice) iz zahtjeva.
     Postavlja tip sadržaja odgovora na "text/html".
     Koristi PrintWriter za ispisivanje potvrde o kupovini s imenom, prezimenom i zadnjih 4 cifre broja kreditne kartice.
-Ovaj servlet omogućava korisnicima unos podataka (ime, prezime, broj kreditne kartice) i simulira proces kupovine prilikom slanja zahtjeva. Metoda doGet prikazuje formu za unos, dok metoda doPost prikazuje potvrdu o kupovini.
+Ovaj servlet omogućava korisnicima unos podataka (ime, prezime, broj kreditne kartice) i simulira proces kupovine prilikom slanja zahtjeva. 
+Metoda doGet prikazuje formu za unos, dok metoda doPost prikazuje potvrdu o kupovini.
