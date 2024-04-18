@@ -1,0 +1,13 @@
+Detaljno objašnjenje koda
+Ovaj kod predstavlja servlet koji se koristi za potvrdu kupovine artikala u webshopu. Evo detaljnog objašnjenja dijelova koda: 
+Klasa ShoppingConfirmationServlet
+•	Ova klasa predstavlja servlet koji obrađuje potvrdu kupovine artikala.
+•	Nasljeđuje klasu HttpServlet što znači da je servlet koji obrađuje HTTP zahtjeve.
+•	Sadrži metodu doPost koja se koristi za obradu POST zahtjeva za potvrdu kupovine.
+Metoda doPost
+•	Metoda doPost prima dva parametra: HttpServletRequest objekt koji sadrži parametre zahtjeva i HttpServletResponse objekt za slanje odgovora.
+•	U ovoj metodi se prvo dobavlja HttpSession objekt iz zahtjeva koji predstavlja sesiju korisnika.
+•	Zatim se provjerava da li je kupovina uspješna na osnovu određenih uslova. U ovom slučaju, varijabla shoppingSucceeded je postavljena na true što znači da se pretpostavlja da je kupovina uvijek uspješna radi demonstracije.
+•	Ako je kupovina uspješna, korisniku se šalje poruka da je kupovina uspjela i zahvaljuje mu se na kupovini. Također se prazni korpa u HttpSession objektu uklanjanjem svih atributa sa imenom "basket".
+•	Ako kupovina nije uspjela, korisniku se šalje poruka da je kupovina neuspjela i da pokuša ponovo.
+Ovaj kod je osnovni primjer servleta koji se koristi za potvrdu kupovine u webshopu, a može se prilagoditi i proširiti prema potrebama specifičnog webshop sistema.
