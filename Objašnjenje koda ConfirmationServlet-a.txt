@@ -1,10 +1,10 @@
-Detaljno objašnjenje koda
 Ovaj kod predstavlja servlet koji se koristi za potvrdu kupovine artikala u webshopu. 
-Evo detaljnog objašnjenja dijelova koda: 
+
 Klasa ShoppingConfirmationServlet
 - Ova klasa predstavlja servlet koji obrađuje potvrdu kupovine artikala.
 - Nasljeđuje klasu HttpServlet što znači da je servlet koji obrađuje HTTP zahtjeve.
 - Sadrži metodu doPost koja se koristi za obradu POST zahtjeva za potvrdu kupovine.
+
 Metoda doPost
 - Metoda doPost prima dva parametra: HttpServletRequest objekt koji sadrži parametre 
 zahtjeva i HttpServletResponse objekt za slanje odgovora.
@@ -16,31 +16,41 @@ kupovina uvijek uspješna radi demonstracije.
 - Ako je kupovina uspješna, korisniku se šalje poruka da je kupovina uspjela i zahvaljuje mu 
 se na kupovini. Također se prazni korpa u HttpSession objektu uklanjanjem svih atributa sa 
 imenom "basket".
-- Ako kupovina nije uspjela, korisniku se šalje poruka da je kupovina neuspjela i da pokuša ponovo.
+- Ako kupovina nije uspjela, korisniku se šalje poruka da je kupovina neuspjela i da pokuša 
+ponovo.
+
 Ovaj kod je osnovni primjer servleta koji se koristi za potvrdu kupovine u webshopu, 
 a može se prilagoditi i proširiti prema potrebama specifičnog webshop sistema.
 
-Ovaj Java kod predstavlja servlet koji obrađuje potvrdu kupovine artikala u webshopu. Servleti su 
-Java klase koje proširuju klasu HttpServlet i koriste se za obradu HTTP zahtjeva i generisanje HTTP 
-odgovora. Klasa ShoppingConfirmationServlet ima metodu doPost koja se koristi za obradu POST zahtjeva 
-kada korisnik potvrdi svoje kupovine. Evo detaljnog objašnjenja koda:
+Ovaj Java kod predstavlja servlet koji obrađuje potvrdu kupovine artikala u webshopu. Servleti 
+su Java klase koje proširuju klasu HttpServlet i koriste se za obradu HTTP zahtjeva i generisanje 
+HTTP odgovora. Klasa ShoppingConfirmationServlet ima metodu doPost koja se koristi za obradu POST 
+zahtjeva kada korisnik potvrdi svoje kupovine. Evo detaljnog objašnjenja koda:
 
-    Import naredbe: Ove linije uvoze potrebne klase za obradu HTTP zahtjeva i odgovora, kao i klasu 
-HttpSession za upravljanje korisničkim sesijama.
-    Deklaracija klase: Klasa ShoppingConfirmationServlet proširuje klasu HttpServlet i deklarisana 
-je kao javna klasa.
-    Metoda doPost: Ova metoda se poziva kada se napravi POST zahtjev servletu. Prima objekat 
-HttpServletRequest i objekat HttpServletResponse kao parametre.
-    HttpSession: Objekat HttpSession se dobija iz objekta HttpServletRequest kako bi se pristupilo 
-podacima korisničke sesije.
-    Varijabla shoppingSucceeded: Boolean varijabla je deklarisana i inicijalizovana na true kako bi 
-se pretpostavilo da je proces kupovine uspješan. U stvarnoj aplikaciji, ovo bi se odredilo na osnovu 
-određenih uslova, kao što su dostupnost artikala, procesiranje plaćanja i upravljanje inventarom.
-    Uvjetna naredba: Uvjetna naredba provjerava da li je proces kupovine bio uspješan. Ako jeste, 
-korisniku se informiše da je kupovina uspjela, a atribut košarice se uklanja iz sesije kako bi se 
-ispraznila. Ako proces kupovine nije uspio, korisniku se informiše da je kupovina neuspjela.
-    IOException: Metoda baca IOException kako bi se obradile eventualne iznimke ulaza ili izlaza 
-koje mogu nastati prilikom obrade zahtjeva.
+    Import naredbe: Ove linije uvoze potrebne klase za obradu HTTP zahtjeva i odgovora,
+kao i klasu HttpSession za upravljanje korisničkim sesijama.
 
-Ukratko, ovaj servlet obrađuje potvrdu kupovine artikala u webshopu tako što informiše korisnika da li 
-e kupovina uspjela ili neuspjela te prazni košaricu iz HttpSession objekta.
+    Deklaracija klase: Klasa ShoppingConfirmationServlet proširuje klasu HttpServlet i 
+deklarisana je kao javna klasa.
+
+    Metoda doPost: Ova metoda se poziva kada se napravi POST zahtjev servletu. Prima 
+objekat HttpServletRequest i objekat HttpServletResponse kao parametre.
+
+    HttpSession: Objekat HttpSession se dobija iz objekta HttpServletRequest kako bi se 
+pristupilo podacima korisničke sesije.
+
+    Varijabla shoppingSucceeded: Boolean varijabla je deklarisana i inicijalizovana na 
+true kako bi se pretpostavilo da je proces kupovine uspješan. U stvarnoj aplikaciji, ovo bi 
+se odredilo na osnovu određenih uslova, kao što su dostupnost artikala, procesiranje plaćanja 
+i upravljanje inventarom.
+
+    Uvjetna naredba: Uvjetna naredba provjerava da li je proces kupovine bio uspješan. Ako 
+jeste, korisniku se informiše da je kupovina uspjela, a atribut košarice se uklanja iz 
+sesije kako bi se ispraznila. Ako proces kupovine nije uspio, korisniku se informiše da je 
+kupovina neuspjela.
+
+    IOException: Metoda baca IOException kako bi se obradile eventualne iznimke ulaza ili 
+izlaza koje mogu nastati prilikom obrade zahtjeva.
+
+Ukratko, ovaj servlet obrađuje potvrdu kupovine artikala u webshopu tako što informiše korisnika 
+da li je kupovina uspjela ili neuspjela te prazni košaricu iz HttpSession objekta.
