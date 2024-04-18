@@ -1,0 +1,32 @@
+import java.io.IOException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+/**
+* This servlet handles the confirmation of shopping items in a webshop.
+* It informs the user whether the shopping succeeded or failed and empties the basket from the HttpSession object.
+*/
+public class ShoppingConfirmationServlet extends HttpServlet {
+/**
+* Handles the POST request to confirm shopping items.
+*
+* @param request The HttpServletRequest object containing the request parameters.
+* @param response The HttpServletResponse object for sending the response.
+* @throws IOException If an input or output exception occurs while handling the request.
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+HttpSession session = request.getSession();
+// Check if the shopping was successful (can be based on certain conditions)
+boolean shoppingSucceeded = true; // Assume shopping always succeeds for demonstration
+if (shoppingSucceeded) {
+// Inform the user that shopping succeeded
+response.getWriter().println("Shopping succeeded! Thank you for your purchase.");
+// Empty the basket by removing all attributes from the session
+session.removeAttribute("basket");
+} else {
+// Inform the user that shopping failed
+response.getWriter().println("Shopping failed. Please try again.");
+}
+}
+}

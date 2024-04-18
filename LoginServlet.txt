@@ -1,0 +1,52 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+/**
+* Servlet implementation class UserLoginServlet
+*/
+public class UserLoginServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+private Map<String, String> users = new HashMap<>();
+/**
+* Initializes the servlet with some default users.
+*/
+public void init() {
+users.put("user1", "password1");
+users.put("user2", "password2");
+}
+/**
+* Handles the GET request to display the login form.
+*/
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+out.println("<html><head><title>User Login</title></head><body>");
+out.println("<h2>User Login</h2>");
+out.println("<form method='post'>");
+out.println("Username: <input type='text' name='username'><br>");
+out.println("Password: <input type='password' name='password'><br>");
+out.println("<input type='submit' value='Login'>");
+out.println("</form>");
+out.println("</body></html>");
+}
+/**
+* Handles the POST request to process the login form data.
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+if (users.containsKey(username) && users.get(username).equals(password)) {
+HttpSession session = request.getSession();
+session.setAttribute("username", username);
+response.sendRedirect("webshop.jsp"); // Redirect to webshop page
+} else {
+response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+out.println("<html><head><title>Login Failed</title></head><body>");
+out.println("<h2>Login Failed. Please try again.</h2>");
+out.println("<a href='login.html'>Go back to login</a>");
+out.println("</body></html>");
+}
+}
+}
