@@ -1,0 +1,22 @@
+Detaljno objašnjenje koda PurchaseServlet-a
+Importi
+    import java.io.IOException;: Uvoz klase IOException iz paketa java.io za rukovanje izuzecima prilikom ulaza i izlaza.
+    import java.io.PrintWriter;: Uvoz klase PrintWriter iz paketa java.io za pisanje teksta na izlazni tok.
+    import javax.servlet.annotation.WebServlet;: Uvoz anotacije WebServlet iz paketa javax.servlet za označavanje servleta.
+    import javax.servlet.http.HttpServlet;: Uvoz klase HttpServlet iz paketa javax.servlet.http za implementaciju servleta.
+    import javax.servlet.http.HttpServletRequest;: Uvoz klase HttpServletRequest iz paketa javax.servlet.http za predstavljanje HTTP zahtjeva.
+    import javax.servlet.http.HttpServletResponse;: Uvoz klase HttpServletResponse iz paketa javax.servlet.http za predstavljanje HTTP odgovora.
+Anotacija @WebServlet
+    @WebServlet("/purchase"): Označava servlet s URL putanjom "/purchase".
+Klasa PurchaseServlet
+    Naslijeđuje klasu HttpServlet i implementira funkcionalnosti servleta za obradu zahtjeva.
+Metoda doGet
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException: Metoda koja se poziva prilikom GET zahtjeva.
+    Postavlja tip sadržaja odgovora na "text/html".
+    Koristi PrintWriter za ispisivanje HTML forme za unos podataka.
+Metoda doPost
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException: Metoda koja se poziva prilikom POST zahtjeva.
+    Dobavlja parametre (ime, prezime, broj kreditne kartice) iz zahtjeva.
+    Postavlja tip sadržaja odgovora na "text/html".
+    Koristi PrintWriter za ispisivanje potvrde o kupovini s imenom, prezimenom i zadnjih 4 cifre broja kreditne kartice.
+Ovaj servlet omogućava korisnicima unos podataka (ime, prezime, broj kreditne kartice) i simulira proces kupovine prilikom slanja zahtjeva. Metoda doGet prikazuje formu za unos, dok metoda doPost prikazuje potvrdu o kupovini.
